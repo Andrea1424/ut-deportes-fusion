@@ -1,0 +1,89 @@
+<ion-header>
+  <nav class="navbar navbar-light bg-light ">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" [routerLink]="['/home-admin']">Cultura y Deportes</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvas6"
+        aria-controls="#navbarOffcanvas6" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-start text-bg-light" tabindex="-1" id="navbarOffcanvas6"
+        aria-labelledby="offcanvasDarkNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title fw-bold text-success" id="offcanvasDarkNavbarLabel">Cultura y Deportes</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item my-2">
+              <a class="nav-link " [routerLink]="['/home-admin']">Tablero</a>
+            </li>
+            <li class="nav-item my-2">
+              <a class="nav-link" [routerLink]="['/list-documentos']">Documentos</a>
+            </li>
+            <li class="nav-item my-2">
+              <a class="nav-link text-danger" (click)="cerrar()">Cerrar Sesión</a>
+            </li>
+            <!-- <li class="nav-item dropdown my-2">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu dropdown-menu-light">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li> -->
+          </ul>
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="container my-4 m-auto p-lg-5">
+    <div class="card bg-transparent border-light border-opacity-25">
+      <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action " >
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Nombre del Documento</h5>
+            <h5 class="mb-1"></h5>
+            <div class="my-auto">
+              <small class="btn btn-link my-auto">Click para descargar</small>
+            </div>
+          </div>
+          <p class="mb-1">Breve descripción del documento</p>
+          <small class="fw-bold">Consideraciones a tomar en cuenta</small>
+        </a>
+      <a href="#" class="list-group-item list-group-item-action ">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Nombre del Documento</h5>
+          <h5 class="mb-1"></h5>
+          <div class="my-auto">
+            <small class="btn btn-link my-auto">Click para descargar</small>
+          </div>
+        </div>
+        <p class="mb-1">Breve descripción del documento</p>
+        <small class="fw-bold">Consideraciones a tomar en cuenta</small>
+      </a>
+      <a href="#" class="list-group-item list-group-item-action ">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Nombre del Documento</h5>
+          <h5 class="mb-1"></h5>
+          <div class="my-auto">
+            <small class="btn btn-link my-auto">Click para descargar</small>
+          </div>
+        </div>
+        <p class="mb-1">Breve descripción del documento</p>
+        <small class="fw-bold">Consideraciones a tomar en cuenta</small>
+      </a>
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,85 @@
+.actual{
+    color: var(--green-primary-student);
+}
+ion-icon{
+    font-size: 20px;
+    margin: auto;
+}
+a{
+    color: var(--green-primary-student);
+    text-decoration: none;
+    font-weight:500;
+}
+.badge{
+    border-radius: 5%;
+    padding: 1.5%;
+}
+.disponibles{
+    color: var(--black-color-student);
+    background-color: var(--green-25);
+}
+.no-disponibles{
+    color: var(--white-light);
+    background-color: var(--red-75-outline);
+}
+.card-activity{
+    border: solid .8px var(--black-25);
+}
+.card-activity:hover {
+    border: solid .8px var(--green-primary-student);
+    /* cursor: pointer;  DESCOMENTAR EN CASO DE HACERLO PARA PC */
+}
+.feed-container{
+  background-color: var(--white-light);
+}
+.card, .card-header, .card-footer{
+  background-color: transparent;
+  border: 0;
+}
+.card{
+  border: solid .6px var(--black-25);
+}
+ @media only screen and (max-width: 768px) {
+    /* .feed-container .row .col-sm-12 {
+      position: absolute;
+      background-color: var(--white-light);
+    } */
+    .feed-container .row .col-sm-12  > img{
+      position: relative;
+      width: 311px;
+      height: 311px;
+      top: -65px;
+      z-index: 0;
+    }  
+    .container-card{
+  padding-bottom: 50%;
+}
+.social-feed{
+    position: absolute;
+    background-color: var(--white-light);
+}
+.social-feed .row .col-sm-12 > img{
+  position: relative;
+  width: 311px;
+  height: 311px;
+  top: -150px;
+  left: 0px;
+  bottom: -80px;
+  right: 0px;
+    z-index: -1;
+    /* top: -200px; */
+  }
+   .social-feed .row .col-sm-12 .col-lg-8{
+    padding-top: 0px;
+  }
+
+  }
+.body-1{
+    color: var(--white-light);
+}
+.sub-2{
+    color: var(--white-light);
+}
+ion-card-title{
+    color: var(--green-primary-student);
+}

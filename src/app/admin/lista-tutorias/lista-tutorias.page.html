@@ -1,0 +1,189 @@
+<ion-header>
+  <nav class="navbar navbar-light bg-light ">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" [routerLink]="['/home-admin']">Cultura y Deportes</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvas7"
+        aria-controls="#navbarOffcanvas7" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-start text-bg-light" tabindex="-1" id="navbarOffcanvas7"
+        aria-labelledby="offcanvasDarkNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title fw-bold text-success" id="offcanvasDarkNavbarLabel">Cultura y Deportes</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item my-2">
+              <a class="nav-link " [routerLink]="['/home-admin']">Tablero</a>
+            </li>
+            <li class="nav-item my-2">
+              <a class="nav-link" [routerLink]="['/list-documentos']">Documentos</a>
+            </li>
+            <li class="nav-item my-2">
+              <a class="nav-link text-danger" (click)="cerrar()">Cerrar Sesión</a>
+            </li>
+            <!-- <li class="nav-item dropdown my-2">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu dropdown-menu-light">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li> -->
+          </ul>
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</ion-header>
+
+  <ion-content class="ion-padding">
+    <div class="container">
+      <div class="  card-home">
+        <div class="card-header text-start ">
+          <div class="row ">
+            <div class="col-md-8 my-auto">
+              <h5 class="fw-bold text-uppercase">Lista de Tutorías</h5>
+            </div>
+            <!-- <div class="col-md-4 my-auto text-end">
+                <button class="btn btn-addTuto w-50" [routerLink]="['/crud-tutoria']"> Añadir Tutoría</button>
+                <input class="form-control search-bar me-2" type="search" placeholder="Buscar Tutoría" aria-label="Search">
+                <button class="btn btn-primario w-25" type="submit">Buscar</button>
+            </div> -->
+          </div>
+        </div>
+        <!-- SEGUNDA TABLA -->
+        <div class="card-body mt-4">
+          <div class="table-responsive">
+            <table class="table text-start">
+              <!-- Encabezado de la tabla -->
+              <thead>
+                <tr>
+                  <th scope="col-auto">Nombre Actividad</th>
+                  <th scope="col-auto">Tipo</th>
+                  <th scope="col-auto">Encargado</th>
+                  <th scope="col-auto">Nrm. Encargado</th>
+                  <th scope="col-auto">Lugar</th>
+                  <th scope="col-auto" style="width: 25%;">Horario</th>
+                  <th scope="col-auto" class="text-center">Opciones</th>
+                </tr>
+              </thead>
+              <!-- Cuerpo de la tabla -->
+              <tbody>
+                <tr *ngFor="let l of lista">
+                  <th scope="row">{{l.actividad}}</th>
+                  <td>
+                     <span class="badge badge-deportiva p-2" *ngIf="id == 1">Deportiva</span>
+                     <span class="badge badge-deportiva p-2" *ngIf="id == 2">Cultural</span>
+                     <span class="badge badge-deportiva p-2" *ngIf="id == 3">Grupal</span>
+                  </td>
+                  <td>{{l.nombre + ' ' + l.apellidos}}</td>
+                  <td>{{l.telefono}}</td>
+                  <td>{{l.lugar}}</td>
+                  <td>
+                    <ul>
+                      <li *ngFor="let h of l.horarios">
+                        <strong>{{h.dia + ' de ' + h.hora_inicio + ' - ' + h.hora_fin}}</strong>
+                      </li>
+                    </ul>
+                  </td>
+                  <td class="text-center">
+                    <a class=" btn-status badge-deportiva dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      Opciones
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item fw-bold" [routerLink]="['/detalle-tutoria',l.idActividad]"><small>Ver Más</small></a></li>
+                      <!-- <li><a class="dropdown-item fw-bold" [routerLink]="['/crud-tutoria']"><small>Editar</small></a></li> -->
+                      <!-- <li><a class="dropdown-item fw-bold btn-danger" href="#"><small>Eliminar</small></a></li> -->
+                    </ul>
+                  </td>
+                </tr>
+                <!-- <tr>
+                  <th scope="row">Danza y Canto</th>
+                  <td> <span class="badge badge-cultural p-2">Cultural</span> </td>
+                  <td>Nombre Tutoria</td>
+                  <td>000-000-0000</td>
+                  <td>Ubicación</td>
+                  <td>00:00</td>
+                  <td class="text-center">
+                    <a class=" btn-status badge-deportiva dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Opciones
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item fw-bold" [routerLink]="['/detalle-tutoria']"><small>Ver Más</small></a></li>
+                      <li><a class="dropdown-item fw-bold" [routerLink]="['/crud-tutoria']"><small>Editar</small></a></li>
+                      <li><a class="dropdown-item fw-bold" href="#"><small>Eliminar</small></a></li>
+                    </ul>
+                  </td>
+                </tr> -->
+               <!-- <tr>
+                  <th scope="row">Origami</th>
+                  <td> <span class="badge badge-grupal p-2">Grupal</span> </td>
+                  <td>Nombre Tutoria</td>
+                  <td>000-000-0000</td>
+                  <td>Ubicación</td>
+                  <td>00:00</td>
+                  <td class="text-center">
+                    <a class=" btn-status badge-deportiva dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      Opciones
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item fw-bold" [routerLink]="['/detalle-tutoria']"><small>Ver Más</small></a></li>
+                      <li><a class="dropdown-item fw-bold" [routerLink]="['/crud-tutoria']"><small>Editar</small></a></li>
+                      <li><a class="dropdown-item fw-bold" href="#"><small>Eliminar</small></a></li>
+                    </ul>
+                  </td>
+                </tr> -->
+                
+    
+    
+              </tbody>
+            </table>
+            <nav aria-label="Page navigation example">
+              <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                  <a class="page-link fw-bold">
+                    << </a>
+                </li>
+                <li class="page-item "><a class="page-link active" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#"> >> </a>
+                </li>
+              </ul>
+            </nav>
+            <!-- <nav aria-label="Page navigation example">
+              <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                  <a class="page-link fw-bold">
+                    << </a>
+                </li>
+                <li class="page-item "><a class="page-link active" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#"> >> </a>
+                </li>
+              </ul>
+            </nav> -->
+          </div>
+        </div>
+        <div align="center" *ngIf="lista == ''">
+          No hay registros
+        </div>
+      </div>
+    
+    </div>
+    </ion-content>

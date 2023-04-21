@@ -1,0 +1,204 @@
+<ion-header>
+  <nav class="navbar navbar-light bg-light ">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" [routerLink]="['/home-instructor']">Cultura y Deportes</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvas"
+        aria-controls="#navbarOffcanvas" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-start text-bg-light" tabindex="-1" id="navbarOffcanvas"
+        aria-labelledby="offcanvasDarkNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title fw-bold text-success" id="offcanvasDarkNavbarLabel">Cultura y Deportes</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item my-2">
+              <a class="nav-link " [routerLink]="['/home-instructor']">Tablero</a>
+            </li>
+            <li class="nav-item my-2">
+              <a class="nav-link" [routerLink]="['/lista-doc-instruc']">Documentos</a>
+            </li>
+            <li class="nav-item my-2">
+              <a class="nav-link text-danger" (click)="cerrar()">Cerrar Sesión</a>
+            </li>
+            <!-- <li class="nav-item dropdown my-2">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu dropdown-menu-light">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li> -->
+          </ul>
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</ion-header>
+
+
+ <ion-menu contentId="main-content">
+
+  <ion-content class="">
+    <ul class="navbar-nav justify-content-end flex-grow-1 p-3">
+      <li class="nav-item my-2">
+        <a class="nav-link m-auto active" aria-current="page" [routerLink]="['/home-instructor']">Tablero</a>
+      </li>
+      <li class="nav-item my-2">
+        <a class="nav-link" [routerLink]="['/list-documentos']">Documentos</a>
+      </li>
+      <li class="nav-item my-2">
+        <a class="nav-link" (click)="cerrar()">Cerrar sesión</a>
+      </li>
+    </ul>
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>CultuSports</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <div class="container-fluid text-center p-2 m-auto">
+      <!--CONTENEDOR CARD TOTAL DE TUTORIAS -->
+      <div class="container card-stats mb-4 text-center">
+        <div class="row align-items-center text-center">
+          <div class="col-md-4 m-auto p-2 p-auto" (click)="ruta(1)">
+            <div class="card card-depo py-3">
+              <div class="row g-0">
+                <div class="col-md-4 text-center m-auto">
+                  <ion-icon class="ball-icon" name="basketball-outline"></ion-icon>
+                </div>
+                <div class="col-md-8   m-auto text-md-start" >
+                  <span>Tutorías Deportivas</span>
+                  <h5 class="fw-bolder" *ngFor="let d of deportiva">{{d.cuenta}} tutorías</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 m-auto p-2 p-auto" (click)="ruta(2)">
+            <div class="card card-cultu py-3">
+              <div class="row g-0">
+                <div class="col-md-4 text-center m-auto">
+                  <ion-icon name="musical-notes-outline" class="music-icon"></ion-icon>
+                </div>
+                <div class="col-md-8   m-auto text-md-start">
+                  <span>Tutorías Culturales</span>
+                  <h5 class="fw-bolder" *ngFor="let c of cultural">{{c.cuenta}} tutorías</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 m-auto p-2 p-auto" (click)="ruta(3)">
+            <div class="card card-grupa py-3">
+              <div class="row g-0">
+                <div class="col-md-4 text-center m-auto">
+                  <ion-icon name="people-outline" class="group-icon"></ion-icon>
+                </div>
+                <div class="col-md-8  m-auto text-md-start">
+                  <span>Tutorías Grupales</span>
+                  <h5 class="fw-bolder" *ngFor="let g of grupal">{{g.cuenta}} tutorías</h5>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTENEDOR DE Botones -->
+      <div class="container">
+        <div class="  card-home">
+          <div class="card-header text-start ">
+            <div class="row my-auto">
+              <div class="col-md-12" align="center">
+                <button (click)="post()">Crear publicacion</button>
+              </div>
+              <br>
+              <hr>
+              <br>
+              <div class="col-md-12" align="center">
+                <button (click)="view()">Ver publicaciones</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTENEDOR DE LISTA DE HOME /LISTA DE LIBERACION -->
+      <div class="container">
+        <div class="  card-home">
+          <div class="card-header text-start ">
+            <div class="row my-auto">
+              <div class="col-md-8">
+                <h5>Lista de Liberación de Estadías</h5>
+              </div>
+              <div class="col-md-4 my-auto">
+                <form class="d-flex" role="search" (ngSubmit)="miForm(form)" #form="ngForm">
+                  <input class="form-control  me-2" type="search" placeholder="Search" aria-label="Search" name="search"
+                    [(ngModel)]="search">
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- SEGUNDA TABLA -->
+          <div class="card-body mt-4" *ngIf="estudiante != 'vacio'">
+            <div class="table-responsive">
+              <table class="table text-start">
+                <!-- Encabezado de la tabla -->
+                <thead>
+                  <tr>
+                    <th scope="col-auto">Matricula</th>
+                    <th scope="col-auto">Nombre</th>
+                    <th scope="col-auto">Tutoría</th>
+                    <th scope="col-auto">Num. Teléfonico</th>
+                    <th scope="col-auto">Grupo</th>
+                    <!-- <th scope="col-auto">Hrs. Restantes</th> -->
+                    <th scope="col-auto">Estatus</th>
+                  </tr>
+                </thead>
+                <!-- Cuerpo de la tabla -->
+                <tbody>
+                  <tr *ngFor="let s of estudiante">
+                    <th scope="row">{{s.matricula}}</th>
+                    <td>{{s.nombres + ' ' + s.apellidos}}</td>
+                    <td>{{s.actividad}}</td>
+                    <td>{{s.telefono}}</td>
+                    <td>{{s.grupo}}</td>
+                    <!-- <td>00:00</td> -->
+                    <td>
+                      <strong *ngIf="s.liberacion == 0" class="btn-status status-noL">No liberado</strong>
+                      <strong *ngIf="s.liberacion == 1" class="btn-status status-siL">Liberado</strong>
+                      <strong *ngIf="s.liberacion == 2" class="btn-status status-Mdc">Situacion Medica</strong>
+                    </td>
+                  </tr>
+
+
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+          <div align="center" *ngIf="estudiante == 'vacio'">
+            No hay registros
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </ion-content>
+</div>

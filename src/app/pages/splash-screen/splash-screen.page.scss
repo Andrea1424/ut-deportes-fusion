@@ -1,0 +1,26 @@
+.contenedor{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    //display: flex;
+    //align-items: center;
+    //justify-content: center;
+    place-items: center;
+}
+
+.Cword, .and, .Dword{
+    text-transform: uppercase;
+    font-size: 2em;
+    font-style: italic;
+}
+.Cword{
+    font-weight: bold;
+    color: var(--green-utvco);
+}
+.Dword{
+    font-weight: bold;
+    color: var(--orange-100);
+}

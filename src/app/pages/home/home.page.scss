@@ -1,0 +1,113 @@
+.feed-container{
+  background-color: var(--white-light);
+}
+.card, .card-header, .card-footer{
+  background-color: transparent;
+  border: 0;
+}
+.card{
+  border: solid .6px var(--black-25);
+}
+
+.h2-bold {
+  color: var(--green-primary-student);
+}
+.h5-medium {
+  color: var(--black-15);
+}
+.h3-bold{
+    color: var(--black-color-student);
+}
+ion-icon {
+  color: var(--black-50);
+}
+
+.card-tuto {
+    border: 0px;
+ display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width:100%;
+max-height: auto;
+text-transform: uppercase;
+}
+
+ .h3-bold{
+    color: var(--green-primary-student);
+    font-style: italic;
+}
+.btn, .btn-primario{
+    font-style: italic;
+}
+.container-card{
+  padding-bottom: 5rem;
+}
+.social-feed{
+    position: relative;
+    z-index: 3;
+    background-color: var(--white-light);
+}
+.social-feed .row .col-sm-12 > img{
+  top: 0px;
+  left: 0px;
+  right: 0px;
+    z-index: 0;
+    /* top: -200px; */
+  }
+  .social-feed .row .col-sm-12{
+    padding-top: 0px;
+  }
+  @media only screen and (max-width: 768px) {
+    /* .feed-container .row .col-sm-12 {
+      position: absolute;
+      background-color: var(--white-light);
+    } */
+    .feed-container .row .col-sm-12  > img{
+      position: relative;
+      width: 311px;
+      height: 311px;
+      top: -65px;
+      z-index: 0;
+    }  
+    .container-card{
+  padding-bottom: 50%;
+}
+.social-feed{
+    position: absolute;
+    background-color: var(--white-light);
+}
+.social-feed .row .col-sm-12 > img{
+  position: relative;
+  width: 311px;
+  height: 311px;
+  top: -150px;
+  left: 0px;
+  bottom: -80px;
+  right: 0px;
+    z-index: -1;
+    /* top: -200px; */
+  }
+   .social-feed .row .col-sm-12 .col-lg-8{
+    padding-top: 0px;
+  }
+
+  }
+
+
+.container-feed > h3{
+  color: var(--green-100);
+}
+ion-card{
+  background-color: var(--white-light);
+  margin-bottom: 2rem;
+  border-radius: 0px;
+  border: solid 1px var(--black-15);
+ box-shadow: 0px 0px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.16);}
+.btn-publi{
+  padding: 8% 0%;
+  font-weight: bold;
+}
+.h6-bold, .body-2{
+  color: var(--black-color-student);
+}

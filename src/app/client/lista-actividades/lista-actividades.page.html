@@ -1,0 +1,148 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>listaActividades</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+</ion-content>
+ -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <a [routerLink]="['/home']" class="p-auto"><ion-icon name="arrow-back-outline"></ion-icon>
+        Regresar</a>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  
+ <div class="container m-auto p-2">
+  <ion-breadcrumbs>
+    <ion-breadcrumb [routerLink]="['/home']" class="sub-1">Inicio</ion-breadcrumb>
+    <ion-breadcrumb class="actual sub-1">Lista Actividades</ion-breadcrumb>
+  </ion-breadcrumbs>
+  <div class="row my-2">
+    <div class="col-lg-4 g-4" *ngFor="let act of actividades">
+      <div  class="card card-activity bg-transparent  border-opacity-25 ">
+        <div class="card-header">
+          <h5 class=" card-title">{{act.actividad}}</h5>
+          <!--   <ion-chip class="mt-auto">
+                          <ion-avatar>
+                            <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+                          </ion-avatar>
+                          <ion-label>Nombre Encargado</ion-label>
+                        </ion-chip> -->
+        </div>
+        <div class="card-body">
+          <p class="card-text">{{act.descripcion}} </p>
+          <ion-item class="py-auto text-start ">
+            <ion-chip class="disponibles">
+              <ion-icon name="people-outline" color="light"></ion-icon>
+              <ion-label>{{act.cupo}} cupos</ion-label>
+            </ion-chip>
+            <ion-chip class="no-disponibles">
+              <ion-icon name="people-outline" color="grey"></ion-icon>
+              <ion-label>{{act.ocupados}} ocupados</ion-label>
+            </ion-chip>
+          </ion-item>
+          <ion-item *ngFor="let h of act.horarios">
+            <ion-icon name="calendar-clear-outline" class="text-success"></ion-icon>
+            <ion-label class="px-1">{{h.dia + ' de ' + h.hora_inicio + '-' + h.hora_fin}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="location-outline" class="text-success"></ion-icon>
+            <ion-label class="px-1">{{act.lugar}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="person-outline" class="text-success"></ion-icon>
+            <ion-label class="px-1">{{act.nombre +' '+ act.apellidos}}</ion-label>
+          </ion-item>
+        </div>
+        <div class="card-footer text-center">
+          <a class=" btn-link stretched-link w-100" [routerLink]="['/detalle-actividad',act.idActividad]">Más Información
+            - ></a>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+ </div>
+
+ <!--  <div class="container-fluid">
+
+
+
+    <ion-card class="my-3" *ngFor="let act of actividades">
+      <ion-card-header>
+        <ion-card-title class="mb-auto">{{act.actividad}}</ion-card-title>
+        <ion-card-subtitle class="sub-2 my-2" *ngFor="let h of act.horarios">{{h.dia + ' de ' + h.hora_inicio + '-' + h.hora_fin}}</ion-card-subtitle>
+        <ion-chip class="mt-auto">
+          <ion-avatar>
+            <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+          </ion-avatar>
+          <ion-label>{{act.nombre +' '+ act.apellidos}}</ion-label>
+        </ion-chip>
+        <ion-item class="py-auto text-start ">
+        <ion-chip class="disponibles">
+          <ion-icon name="people-outline"  color="light"></ion-icon>
+          <ion-label>{{act.cupo}} cupos</ion-label>
+        </ion-chip>
+        <ion-chip class="no-disponibles">
+        <ion-icon name="people-outline" color="grey"></ion-icon>
+        <ion-label>{{act.ocupados}} ocupados</ion-label>
+        </ion-chip>
+      </ion-item>
+      </ion-card-header>
+      <ion-card-content>
+        <div>
+          <p class="body-1">{{act.descripcion}}</p>
+          <ion-item>
+            <ion-icon name="location-outline" color="success"></ion-icon>
+            <ion-label class="ms-2">{{act.lugar}}</ion-label>
+          </ion-item>
+        </div>
+        <div class="text-end">
+          <button class="btn btn-secondary w-75" [routerLink]="['/detalle-actividad',act.idActividad]">Más Información</button>
+        </div>
+      </ion-card-content>
+    </ion-card> -->
+    <!-- <ion-card class="my-3">
+      <ion-card-header>
+        <ion-card-title class="mb-auto">Nombre Actividad</ion-card-title>
+        <ion-card-subtitle class="sub-2 my-2">
+          00/00/00 -00:00</ion-card-subtitle>
+        <ion-chip class="mt-auto">
+          <ion-avatar>
+            <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+          </ion-avatar>
+          <ion-label>Nombre Encargado</ion-label>
+        </ion-chip>
+        <ion-item class="py-auto text-start ">
+          <ion-chip class="disponibles">
+            <ion-icon name="people-outline"  color="light"></ion-icon>
+            <ion-label>25 cupos</ion-label>
+          </ion-chip>
+          <ion-chip class="no-disponibles">
+          <ion-icon name="people-outline" color="grey"></ion-icon>
+          <ion-label>25 cupos</ion-label>
+          </ion-chip>
+        </ion-item>
+      </ion-card-header>
+      <ion-card-content>
+        <div>
+          <p class="body-1">Decripción del objetivo de la actividad</p>
+          <ion-item>
+            <ion-icon name="location-outline" color="success"></ion-icon>
+            <ion-label class="ms-2">Lugar de la Tutoria</ion-label>
+          </ion-item>
+        </div>
+        <div class="text-end">
+          <button class="btn btn-secondary w-75" [routerLink]="['/detale-actividad']">Más Información</button>
+        </div>
+      </ion-card-content>
+    </ion-card> 
+  </div>-->
+</ion-content>

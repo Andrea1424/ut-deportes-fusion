@@ -1,0 +1,65 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>crearPublicacion</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content >
+  <div class="container my-5 m-auto p-2">
+    <div class="card  p-2">
+      <div class="card-header text-center fw-bold text-uppercase text-black">
+        Formulario Crear Publicación
+      </div>
+      <div class="card-body">
+      <form class="row gx-3 gy-2 align-items-center text-black" [formGroup]="miFormulario">
+        <div class="col-lg-4 col-sm-3">
+          <label for="" class="form-label">Tipo de Actividad</label>
+          <select class="form-select" aria-label="Default select example" formControlName="idTipoActividad">
+            <option value="" disabled selected>Seleccionar Tipo de Actividad</option>
+            <option value="1">Deportiva</option>
+            <option value="2">Cultural</option>
+            <option value="3">Grupal</option>
+          </select>
+        </div>
+        <div class="col-lg-4 col-sm-3">
+          <label for="" class="form-label">Nombre de la Actividad</label>
+          <input type="text" class="form-control" id="specificSizeInputName" formControlName="actividad" placeholder="Name Activity">
+        </div>
+        
+        <div class="col-lg-4 col-sm-3">
+          <label for="" class="form-label">Objetivo/Descripción</label>
+          <textarea class="form-control" placeholder="Describe la actividad" formControlName="descripcion" id="floatingTextarea"></textarea>
+        </div>
+
+        <div class="col-lg-4 col-sm-3">
+          <label for="" class="form-label">Lugar Asignado</label>
+          <input type="text" class="form-control" id="specificSizeInputName" formControlName="lugar" placeholder="Lugar de tutoria">
+        </div>
+        <div class="col-lg-4 col-sm-3 py-2">
+              <label for="" class="form-label">Cupos</label>
+            <div class="input-group">
+              <span class="input-group-text">Cupo</span>
+              <input type="number" aria-label="First name" class="form-control" formControlName="cupo" placeholder="Capacidad Maxima">
+            </div>
+        </div>
+        <div class="col-lg-4 col-sm-9 py-2">
+          <label for="" class="form-label">Materiales a Ocupar</label>
+            <div class="input-group">
+              <span class="input-group-text">Materiales</span>
+              <input type="text" aria-label="First name" class="form-control" formControlName="material" placeholder="Herramientas">
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-sm-3 my-4 m-auto" >
+          <!-- <button type="submit" class="btn btn-success w-100">Publicar Actividad</button> -->
+          <button *ngIf="miFormulario.invalid && !params" disabled (click)="guardar()" class="btn btn-success w-100">Publicar Actividad</button>
+          <button *ngIf="miFormulario.valid && !params" (click)="guardar()" class="btn btn-success w-100">Publicar Actividad</button>
+
+          <button *ngIf="miFormulario.invalid && params" disabled class="btn btn-success w-100" (click)="actualizar()">Actualizar publicacion</button>
+          <button *ngIf="miFormulario.valid && params" class="btn btn-success w-100" (click)="actualizar()">Actualizar publicacion</button>
+        </div>
+      </form>
+      </div>
+    </div>    
+  </div>
+</ion-content>

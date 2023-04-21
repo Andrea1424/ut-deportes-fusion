@@ -1,0 +1,68 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>formPersonData</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+</ion-content>
+ -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <a [routerLink]="['/detalle-actividad',id]" class="p-auto"><ion-icon name="arrow-back-outline"></ion-icon>
+        Regresar</a>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding ">
+ <div class="container-lg mx-lg-5 ">
+  <ion-card class="card-form1 p-1 m-lg-4">
+    <ion-card-header>
+      <h5 class="text-center h5-bold">Ingresa tus Datos Personales</h5>
+      <ion-card-subtitle class="text-white">Rellena los campos del formulario con tus datos
+        personales</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <form [formGroup]="miFormulario">
+        <ion-item fill="solid" class="mb-3">
+          <ion-label position="stacked" class="label">Nombre</ion-label>
+          <ion-input type="text" formControlName="nombre"></ion-input>
+          <ion-note slot="helper">Ingresa tu(s) nombre(s)</ion-note>
+          <ion-note slot="error">Valor no valido</ion-note>
+        </ion-item>
+        <ion-item fill="solid" class="mb-3">
+          <ion-label position="stacked" class="label">Apellidos</ion-label>
+          <ion-input type="text" formControlName="apellidos"></ion-input>
+          <ion-note slot="helper">Ingresa tu(s) apellido(s)</ion-note>
+          <ion-note slot="error">Valores no Validos</ion-note>
+        </ion-item>
+        <ion-item fill="solid" class="mb-3">
+          <ion-label position="stacked" class="label">Numero Telefonico</ion-label>
+          <ion-input type="number" formControlName="telefono"></ion-input>
+          <ion-note slot="helper">Enter un teléfono valido</ion-note>
+          <ion-note slot="error">Numéro no valido</ion-note>
+        </ion-item>
+        <ion-list>
+          <ion-item class="mb-3">
+            <ion-label position="stacked" class="label">Sexo</ion-label>
+            <ion-select placeholder="Selecciona tu sexo" formControlName="sexo">
+              <ion-select-option value="Masculino">Masculino</ion-select-option>
+              <ion-select-option value="Femenino">Femenino</ion-select-option>
+              <ion-select-option value="Otro">Otro</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+        <div class="m-auto text-center">
+          <button class="btn btn-primario" *ngIf="miFormulario.valid" type="submit" (click)="save()">Continuar > > >
+          </button>
+          <button class="btn btn-primario" *ngIf="miFormulario.invalid" type="submit" disabled>Continuar > > > </button>
+        </div>
+      </form>
+    </ion-card-content>
+  </ion-card>
+ </div>
+</ion-content>

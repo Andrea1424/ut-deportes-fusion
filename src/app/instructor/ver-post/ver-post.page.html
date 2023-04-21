@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <a [routerLink]="['/home-instructor']" class="p-auto"><ion-icon name="arrow-back-outline"></ion-icon>
+        Regresar</a>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-breadcrumbs>
+    <ion-breadcrumb [routerLink]="['/home-instructor']" class="sub-1">Inicio</ion-breadcrumb>
+    <ion-breadcrumb class="actual sub-1">Actividades Culturales</ion-breadcrumb>
+  </ion-breadcrumbs>
+  <ion-card *ngFor="let c of publicaciones; let i = index">
+    <img alt="Silhouette of mountains" [src]=c.imagen />
+    <ion-card-header>
+      <span class="sub-2"> {{c.nombre + ' ' + c.apellidos}} </span>
+      <ion-card-title class="h6-bold">{{c.titulo}} </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-card-subtitle class="body-2">{{c.descripcion}}</ion-card-subtitle>
+      <ion-grid>
+        <ion-row>
+          <ion-col size-md="4" class="text-center btn-publi">
+            <ion-icon name="heart" class="text-primary"></ion-icon>
+            {{c.reacciones}}
+          </ion-col>
+          <!-- <ion-col size-md="4" class="text-center btn-publi">
+            <ion-icon name="chatbubble-outline" class="text-black"></ion-icon>
+            {{c.comentarios}} </ion-col> -->
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <button type="button" class="btn btn-danger m-auto" (click)="eliminar(c.idPublicacion)">
+              <ion-icon name="trash-outline"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,76 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>formschoolData</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+</ion-content>
+ -->
+
+ <ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <a [routerLink]="['/form-person-data',id]" class="p-auto"><ion-icon name="arrow-back-outline"></ion-icon>
+        Regresar</a>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="container-lg mx-lg-5">
+    <ion-card class="p-1 m-lg-4">
+      <ion-card-header>
+        <h5 class="text-center h5-bold">Ingresa tus Datos Académicos</h5>
+        <ion-card-subtitle class="text-white">Rellena los campos del formulario con tus datos
+          personales</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <form [formGroup]="miFormulario">
+          <ion-item fill="solid" class="mb-3">
+            <ion-label position="stacked" class="label">Matricula</ion-label>
+            <ion-input type="text" formControlName="matricula" [hidden]="miFormulario.value.matricula"></ion-input>
+            <ion-label type="text">{{miFormulario.value.matricula}}</ion-label>
+            <ion-note slot="helper">Enter a valid nomenclatura</ion-note>
+            <ion-note slot="error">Invalid email</ion-note>
+          </ion-item>
+    
+          <!-- <ion-list>
+              <ion-item class="mb-3">
+                <ion-label position="stacked" class="label">Nivel Académico</ion-label>
+                <ion-select placeholder="Selecciona tu Nivel Académico " class="texttfiel-text" [multiple]="false">
+                  <ion-select-option value="tsu">T.S.U</ion-select-option>
+                  <ion-select-option value="ing">Ingeniería</ion-select-option>
+                  <ion-select-option value="lic">Licencitura</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-list> -->
+    
+          <ion-list>
+            <ion-item class="mb-3">
+              <ion-label position="stacked" class="label">Carrera</ion-label>
+              <ion-select placeholder="Selecciona tu Carrera" class="texttfiel-text" [multiple]="false"
+                formControlName="idCarrera">
+                <ion-select-option value="{{c.idCarrera}}" *ngFor="let c of carreras">{{c.carrera}}</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+          <ion-list>
+            <ion-item class="mb-3">
+              <ion-label position="stacked" class="label">Grupo</ion-label>
+              <ion-input type="text" formControlName="grupo"></ion-input>
+            </ion-item>
+          </ion-list>
+          <div class="m-auto text-center">
+            <button class="btn btn-primario" *ngIf="miFormulario.valid" type="submit" (click)="save()">Continuar > > >
+            </button>
+            <button class="btn btn-primario" *ngIf="miFormulario.invalid" disabled type="submit">Continuar > > > </button>
+          </div>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+</ion-content>

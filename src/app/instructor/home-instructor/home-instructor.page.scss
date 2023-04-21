@@ -1,0 +1,152 @@
+ion-content {
+    --background: #F4F6F9;
+}
+ion-title{
+    color: #00A58E;
+    font-size: 1.8em;
+    font-weight: 900;
+}
+.nav-link{
+    color: black;
+    font-weight: bold;
+}
+.nav-item .active{
+    border-radius: 4px;
+    padding-left: 5px;
+    color: var(--white-light);
+    background-color: #00A58E ;
+}
+.nav-link:hover{
+    color: white;
+    background-color: #00A58E;
+   // background-color: #DAEDED;
+    border-radius: 4px;
+    padding-left: 5px;
+}
+.card-stats{
+    background-color: var(--white-light);
+}
+.card-depo{
+    background-color: #D3F1E4;
+}
+.ball-icon{
+    color: #50C793;
+    font-size: 52px;
+}
+.card-cultu{
+    background-color: #B5CEF3;
+}
+.music-icon{
+   color: #0063F7; 
+   font-size: 52px;
+}
+.card-grupa{
+    background-color: #F3D9D0 ;
+}
+.group-icon{
+    font-size: 52px;
+    color: #F1595C;
+}
+.card{
+    border: none;
+}
+.card, .row > .col-md-6{
+    text-align: center;
+    color: black;
+}
+.card-home{
+    padding: 12px;
+  //  padding: 24px;
+    border-radius: 0.375rem;
+    border: solid .8px #e5e7eb;
+    color: black;
+    background-color: var(--white-light);
+}
+table tr{
+    padding: 10px;
+    vertical-align: middle;
+}
+table th{
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 600;
+}
+thead{
+    background-color: #F1F5F9;
+    padding: 10px;
+}
+tbody{
+    font-size: 12px;
+    letter-spacing: 0.1px;
+    font-weight: normal;
+}
+.page-item:hover{
+    background-color: #F1F5F9;
+}
+.page-link{
+    font-weight: bold;
+    color: black;
+    font-size: .75em;
+}
+.page-item .active{
+    background-color: black;
+    color: white;
+}
+
+/*ESTILOS PRIMERA TABLA First Try 
+.-mb-6{
+    margin-bottom: -1.5rem;
+}
+.-mx-6{
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+}
+.vgt-wrap{
+    position: relative;
+}
+.vgt-responsive{
+    width: 100%;
+    overflow-x: auto;
+    position: relative;
+}
+table.vgt-table{
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    table-layout: auto;
+    border: 1px solid #dcdfe6;
+}
+table{
+    display: table;
+    text-indent: 0;
+    border-spacing: 2px ;
+}
+colgroup{
+    display: table-column-group;
+}
+col{
+    display: table-column;
+}
+thead{
+    display: table-header-group;
+    vertical-align: middle;
+}
+tr{
+    display: table-row;
+    vertical-align: inherit;
+}
+.vgt-table thead th{
+    padding: 1.25rem 1.5rem;
+    text-transform: uppercase;
+    line-height: 1rem;
+}
+tbody{
+    display: table-row-group;
+    vertical-align: middle;
+}
+.vgt-table.v-middle td{
+    vertical-align: middle;
+}
+.flex-none{
+    flex: none;
+} */

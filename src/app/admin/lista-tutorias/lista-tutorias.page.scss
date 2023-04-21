@@ -1,0 +1,79 @@
+ion-content {
+    --background: #F4F6F9;
+}
+ion-title{
+    color: #00A58E;
+    font-size: 1.8em;
+    font-weight: 900;
+}
+.nav-link{
+    color: black;
+    font-weight: bold;
+}
+.nav-item .active{
+    border-radius: 4px;
+    padding-left: 5px;
+    color: var(--white-light);
+    background-color: #00A58E ;
+}
+.nav-link:hover{
+    color: white;
+    background-color: #00A58E;
+   // background-color: #DAEDED;
+    border-radius: 4px;
+    padding-left: 5px;
+}
+.badge{
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 4px;
+    padding: 12px 4px;
+}
+.badge-deportiva{
+    background-color: rgba(80, 199, 147, 0.25);
+    color: #50C793;
+}
+.badge-cultural{
+    background-color: rgba(0, 99, 247, 0.25);
+    color: #0063F7;
+}
+.badge-grupal{
+    background-color: rgba(250, 145, 107, 0.25);
+    color: #FA916B;
+} 
+/* table, tr, th,td {
+    border: 1px solid black;
+} */
+
+table tr{
+    padding: 10px;
+    vertical-align: middle;
+}
+table th{
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 600;
+}
+thead{
+    background-color: #F1F5F9;
+    padding: 10px;
+}
+tbody{
+    font-size: 12px;
+    letter-spacing: 0.1px;
+    font-weight: normal;
+}
+
+.page-item:hover{
+    background-color: #F1F5F9;
+}
+.page-link{
+    font-weight: bold;
+    color: black;
+    font-size: .75em;
+}
+.page-item .active{
+    border: solid 1px black;
+    background-color: black;
+    color: white;
+}

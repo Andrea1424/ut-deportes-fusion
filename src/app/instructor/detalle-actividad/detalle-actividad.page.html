@@ -1,0 +1,354 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>detalleTutoria</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+</ion-content>
+ -->
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>crudTutoria</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+</ion-content>
+ -->
+ <ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>CultSports</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="">
+    <ul class="navbar-nav justify-content-end flex-grow-1 p-3">
+      <li class="nav-item my-2">
+        <a class="nav-link m-auto active" aria-current="page" href="#">Tablero</a>
+      </li>
+      <li class="nav-item my-2">
+        <a class="nav-link" href="#">Documentos</a>
+      </li>
+      <li class="nav-item dropdown my-2">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Tutorías Deportivas
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" [routerLink]="['/lista-tutorias']">Tutoria Deportiva 1</a></li>
+          <li><a class="dropdown-item" href="#">Tutoria 2</a></li>
+        </ul>
+      </li>
+      <li class="nav-item dropdown my-2">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Tutorías Culturales
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" [routerLink]="['/lista-tutorias']">Tutoria Grupal</a></li>
+          <li><a class="dropdown-item" href="#">Tutoria 2</a></li>
+        </ul>
+      </li>
+      <li class="nav-item dropdown my-2">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Tutorías Grupales
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" [routerLink]="['/lista-tutorias']">Tutoria Grupal</a></li>
+          <li><a class="dropdown-item" href="#">Tutoria 2</a></li>
+        </ul>
+      </li>
+    </ul>
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>CultuSports</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <!-- CONTENEDOR PRINCIPAL DE DETALLES DE TUTORÍA -->
+    <div class="container text-center">
+      <div class="row " *ngFor="let a of actividad">
+        <!-- COLUMNA Y CONTENEDOR PARA CARDS DE DATOS DE TUTORÍA -->
+        <div class="col-md-4 m-auto  text-center">
+          <div class="card p-1 ">
+            <div class="row my-1">
+              <div class="col">
+                <div class=" card-bg-green m-auto text-white">
+                  <div class="row  py-2">
+                    <div class="col " *ngFor="let h of a.horarios">
+                      <ion-icon name="calendar-number-outline" class="calendar-icon"></ion-icon>
+                      <div class="fw-bold">
+                        <small class="text-dark  ">{{h.dia}}</small>
+                      </div>
+                      <span class="fw-bold text-dark">
+                        {{h.hora_inicio}} - {{h.hora_fin}}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row my-1">
+              <div class="col ">
+                <div class="p-2 card-bg-red m-auto text-white">
+                  <div class="row ">
+                    <div class="col p-1">
+                      <ion-icon name="location-outline" class="red-icon"></ion-icon>
+                      <div class="fw-bold">
+                        <small class="text-dark  ">Lugar</small>
+                      </div>
+                      <span class="fw-bold text-dark">
+                        {{a.lugar}}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class=" p-2 card-bg-blue m-auto text-white">
+                  <div class="row ">
+                    <div class="col p-1">
+                      <ion-icon name="people-outline" class="blue-icon"></ion-icon>
+                      <div class="fw-bold">
+                        <small class="text-dark  ">Cupo</small>
+                      </div>
+                      <span class="fw-bold fs-6 text-dark">
+                        {{a.cupo}} lugares
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row my-1">
+              <div class="col">
+
+                <div class="p-2 card-bg-blue m-auto text-white">
+                  <div class="row ">
+                    <div class="col p-1">
+                      <ion-icon name="time-outline" class="blue-icon"></ion-icon>
+                      <div class="fw-bold">
+                        <small class="text-dark  ">Hrs. Totales</small>
+                      </div>
+                      <span class="fw-bold text-dark">
+                        20 horas de actividad
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="p-2 card-bg-red m-auto text-white">
+                  <div class="row ">
+                    <div class="col p-1">
+                      <ion-icon name="person-outline" class="red-icon"></ion-icon>
+                      <div class="fw-bold">
+                        <small class="text-dark  ">Encargado</small>
+                      </div>
+                      <span class="fw-bold text-dark">
+                        {{a.nombre}} {{a.apellidos}}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- COLUMA Y CONTENDOR PARA OBJETIVOS, REGLAS Y MATERIALES DE TUTORÍA -->
+        <div class="col-md-8">
+          <div class="card p-3">
+            <div class=" text-start row">
+              <div class="col-10">
+                <h6 class="fw-bold">Sobre la Tutoría</h6>
+              </div>
+              <div class="col-2 m-auto pe-2 text-end">
+                <button class="btn-edit " [routerLink]="['/crud-tutoria']">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil"
+                    viewBox="0 0 16 16">
+                    <path
+                      d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="card-body p-0">
+              <div class="row my-2 m-auto">
+                <div class="col">
+                  <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                          aria-expanded="true" aria-controls="collapseOne">
+                          <small>Descripcion de la Tutoría</small>
+                        </button>
+                      </h2>
+                      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body text-start">
+                          <span><strong>{{a.descripcion}}</strong></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row my-2 m-auto">
+                <div class="col">
+                  <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                          aria-expanded="false" aria-controls="collapseThree">
+                         <small>Materiales (Opcional)</small>
+                        </button>
+                      </h2>
+                      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body text-start">
+                          <span>{{a.material}}</span>
+                          <!-- <ol class="list-group list-group-numbered">
+                            <li class="list-group-item">A list item</li>
+                            <li class="list-group-item">A list item</li>
+                            <li class="list-group-item">A list item</li>
+                          </ol> -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                          aria-expanded="false" aria-controls="collapseTwo">
+                        <small>Reglas</small>
+                        </button>
+                      </h2>
+                      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body text-start">
+                          <!-- <span>Ingresar las reglas de la actividad... <strong class="text-danger">*Obligatorio.</strong> </span> -->
+                          <ol class="list-group list-group-numbered">
+                            <li class="list-group-item">Cumplir con las horas indicadas</li>
+                            <!-- <li class="list-group-item">A list item</li> -->
+                            <!-- <li class="list-group-item">A list item</li> -->
+                          </ol>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="row my-2 p-2 " style="background-color: #F1F5F9;">
+                <div class="col-6 m-auto">
+                  <small class="fw-bold">Fecha de Inicio</small>
+                  <p class="fs-6 fw-bold text-primary">00/00/00</p>
+                </div>
+                <div class="col-6 m-auto">
+                  <small class="fw-bold">Fecha Termino</small>
+                  <p class="fs-6 fw-bold text-danger">00/00/00</p>
+                </div>
+              </div> -->
+              
+            </div>
+            
+
+          </div>
+        </div>
+        <!-- CONTENEDOR GENERAL DE TABLA DE ALUMNOS INSCRITOS A TUTORÍA -->
+        <div class="container my-2 ">
+          <div class="  card-home">
+            <div class="card-header text-start ">
+              <div class="row my-auto px-4">
+                <div class="col-md-8 text-uppercase">
+                  <h6 class="fw-bold px-4">Lista de alumnos de Tutoría</h6>
+                </div>
+                <div class="col-md-4 my-auto">
+                  <form class="d-flex px-4" role="search" (ngSubmit)="miForm(form)" #form="ngForm">
+                    <input class="form-control  me-2" type="search" placeholder="Search" aria-label="Search" name="search" [(ngModel)]="search">
+                  </form>
+                </div>
+              </div>
+            </div>
+           
+            <!-- SEGUNDA TABLA -->
+            <div class="card-body mt-4">
+              <div class="container">
+                <div class="table-responsive">
+                <table class="table text-start">
+                  <!-- Encabezado de la tabla -->
+                  <thead>
+                    <tr>
+                      <th scope="col-auto">Matricula</th>
+                      <th scope="col-auto">Nombre</th>
+                      <th scope="col-auto">Carrera</th>
+                      <th scope="col-auto">Grupo</th>
+                      <th scope="col-auto">Nro. Teléfonico</th>
+                      <th scope="col-auto">Estatus</th>
+                    </tr>
+                  </thead>
+                  <!-- Cuerpo de la tabla -->
+                  <tbody>
+
+                    <tr *ngFor="let e of estudiantes">
+                      <th scope="row">{{e.matricula}}</th>
+                      <td>{{e.nombres}} {{e.apellidos}}</td>
+                      <td>{{e.carrera}}</td>
+                      <td>{{e.grupo}}</td>
+                      <td>{{e.telefono}}</td>
+                      <td>
+                        <strong *ngIf="e.liberacion == 0" class="btn-status status-noL">No liberado</strong>
+                        <strong *ngIf="e.liberacion == 1" class="btn-status status-siL">Liberado</strong>
+                        <strong *ngIf="e.liberacion == 2" class="btn-status status-Mdc">Situacion Medica</strong>
+                        <!-- <a class=" btn-status status-noL dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                          aria-expanded="false">
+                          No Liberado
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item fw-bold" href="#"><small>No Liberado</small></a></li>
+                          <li><a class="dropdown-item fw-bold" href="#"><small>Pendiente</small></a></li>
+                          <li><a class="dropdown-item fw-bold" href="#"><small>Si Liberado</small></a></li>
+                          <li><a class="dropdown-item fw-bold" href="#"><small>Situación Mdca</small></a></li>
+                        </ul> -->
+                      </td>
+                    </tr>
+        
+                  </tbody>
+                </table>
+                <!-- <nav aria-label="Page navigation example">
+                  <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                      <a class="page-link fw-bold">
+                        << </a>
+                    </li>
+                    <li class="page-item "><a class="page-link active" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                      <a class="page-link" href="#"> >> </a>
+                    </li>
+                  </ul>
+                </nav> -->
+              </div>
+              </div>
+            </div>
+        
+            <div align="center" *ngIf="estudiante == 'vacio'">
+              No hay registros
+            </div>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</div>

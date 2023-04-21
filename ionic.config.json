@@ -1,0 +1,7 @@
+{
+  "name": "plataformaEstadias",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

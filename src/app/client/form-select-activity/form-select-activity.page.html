@@ -1,0 +1,46 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>formSelectActivity</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+</ion-content>
+ -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <a [routerLink]="['/formschool-data',id]" class="p-auto"><ion-icon name="arrow-back-outline"></ion-icon>
+        Regresar</a>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+ <div class="container-lg mx-lg-5">
+<form action="" class="p-1 m-lg-4">
+  <ion-card class="p-1">
+    <ion-card-header>
+      <h5 class="text-center h5-bold">Ultimo paso</h5>
+      <ion-card-subtitle class="text-white">Verifica que sea correcta la actividad a la cual quieres
+        inscribirte</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list *ngFor="let a of actividad">
+        <ion-item>
+          <ion-label align="center">{{a.actividad}}</ion-label>
+          <!-- <ion-radio slot="end" value="grapes"></ion-radio> -->
+        </ion-item>
+      </ion-list>
+   <div class="m-auto text-center">
+      <button class="btn btn-primario" type="submit" (click)="save()">Inscribirme > > > </button>
+   </div>
+    </ion-card-content>
+  </ion-card>
+</form>
+ </div>
+
+
+</ion-content>

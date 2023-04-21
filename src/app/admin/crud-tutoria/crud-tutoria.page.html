@@ -1,0 +1,144 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>crudTutoria</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+</ion-content>
+ -->
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>CultSports</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="">
+    <ul class="navbar-nav justify-content-end flex-grow-1 p-3">
+      <li class="nav-item my-2">
+        <a class="nav-link m-auto active" aria-current="page" href="#">Tablero</a>
+      </li>
+      <li class="nav-item my-2">
+        <a class="nav-link" href="#">Documentos</a>
+      </li>
+      <li class="nav-item dropdown my-2">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Tutorías Deportivas
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" [routerLink]="['/lista-tutorias']">Tutoria Deportiva 1</a></li>
+          <li><a class="dropdown-item" href="#">Tutoria 2</a></li>
+        </ul>
+      </li>
+      <li class="nav-item dropdown my-2">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Tutorías Culturales
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" [routerLink]="['/lista-tutorias']">Tutoria Grupal</a></li>
+          <li><a class="dropdown-item" href="#">Tutoria 2</a></li>
+        </ul>
+      </li>
+      <li class="nav-item dropdown my-2">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Tutorías Grupales
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" [routerLink]="['/lista-tutorias']">Tutoria Grupal</a></li>
+          <li><a class="dropdown-item" href="#">Tutoria 2</a></li>
+        </ul>
+      </li>
+    </ul>
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>CultuSports</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <div class="container m-auto">
+      <div class="contenedor p-2 m-2">
+        <div class="card p-4">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item "><a [routerLink]="['/lista-tutorias']">Lista Tutorías</a></li>
+                <li class="breadcrumb-item active fw-bold" aria-current="page" >CRUD tutoría</li>
+              </ol>
+            </nav>
+          <div class="card-body p-0">
+            <h5 class="fw-bold">Formulario para CRUD tutoría</h5>
+            <div class="container-form m-sm-4 ">
+              <form class="row g-3">
+                <div class="col-md-6">
+                  <label for="inputText4" class="form-label">Nombre de Tutoría</label>
+                  <input type="text" class="form-control" placeholder="Nombre Actividad" id="inputText4">
+                  <!-- <input type="email" class="form-control" id="inputEmail4"> -->
+                </div>
+                <div class="col-md-6">
+                  <label for="inputText5" class="form-label">Encargado de Tutoría</label>
+                  <input type="text" class="form-control" placeholder="Nombre Completo" id="inputText5">
+                  <!-- <input type="password" class="form-control" id="inputPassword4"> -->
+                </div>
+                <div class="col-md-6">
+                  <label for="inputDate1" class="form-label">Lugar de Tutoría</label>
+                  <!-- <input type="date" class="form-control" id="inputDate" name="fecha-inicio" value="01/01/2023" min="01-01-2023"
+                                    max="01-01-2024"> -->
+                  <input type="text" class="form-control" placeholder="Lugar Asignado" id="inputCity">
+                </div>
+                <div class="col-md-3">
+                  <label for="inputState" class="form-label">Fecha de Inicio</label>
+                  <input type="date" class="form-control" id="inputDate2" name="fecha-inicio" value="01/01/2023" min="01-01-2023"
+                    max="01-01-2024">
+                  <!-- <select id="inputState" class="form-select">
+                                    <option selected>Choose...</option>
+                                    <option>...</option>
+                                  </select> -->
+                </div>
+                <div class="col-md-3">
+                  <label for="inputZip" class="form-label">Fecha de Termino</label>
+                  <input type="date" class="form-control" id="inputDate2" name="fecha-inicio" value="01/01/2023" min="01-01-2023"
+                    max="01-01-2024">
+                  <!-- <input type="text" class="form-control" id="inputZip"> -->
+                </div>
+                <div class="col-md-6">
+                  <label for="inputHorario1" class="form-label">Horario 1</label>
+                  <input type="text" class="form-control" placeholder="Ingresa el horario de la tutoría" id="inputHorario1">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputHorario1" class="form-label">Horario 2 <small><strong>*Opcional</strong></small> </label>
+                  <input type="text" class="form-control" placeholder="Ingresa el segundo de la tutoría" id="inputHorario1">
+                </div>
+                <div class="col-md-3">
+                  <label for="" class="form-label">Reglas de la Materia</label>
+                  <textarea name="" class="form-control" placeholder="Reglas de la actividad" id="" cols="30" rows="1"></textarea>
+                </div>
+                <div class="col-md-3">
+                  <label for="" class="form-label">Materiales de la Materia</label>
+                  <textarea name="" class="form-control" placeholder="Materiales para la actividad" id="" cols="30" rows="1"></textarea>
+                </div>
+                <div class="col-md-3">
+                  <label for="inputHorario1" class="form-label">Cupo de Tutoría</label>
+                  <input type="text" class="form-control" placeholder="Integrantes max de actividad" id="inputHorario1">
+                </div>
+                <div class="col-md-3">
+                  <label for="inputHorario1" class="form-label">Horas Totales de Actividad</label>
+                  <input type="number" class="form-control" placeholder="Ingresa el horario de la tutoría" id="inputHorario1">
+                </div>
+                
+                <div class="col-md-4 text-center mx-auto">
+                  <button type="submit" class="btn btn-primario ">Registrar Tutoría</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</div>

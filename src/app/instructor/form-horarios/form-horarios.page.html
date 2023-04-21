@@ -1,0 +1,75 @@
+<div class="card text-bg-dark p-2">
+  <div class="card-header text-center fw-bold text-uppercase">
+    Añadir horarios
+  </div>
+  <div class="card-body">
+    <div class="instrucciones mb-3">
+      Ingresa los diferentes horarios para la actividad
+    </div>
+    <label for="" class="form-label">Ingresa los datos correspondientes</label>
+    <div class="input-group">
+      <!-- <form (ngSubmit)="save()" #miFormulario="ngForm">
+        <select id="inputState" class="form-select" name="equipo" [(ngModel)]="equipo.equipo">
+          <option selected>Día...</option>
+          <option>Lunes</option>
+          <option>Martes</option>
+          <option>Miercoles</option>
+          <option>Jueves</option>
+          <option>Viernes</option>
+        </select>
+        <input type="text" aria-label="First name" class="form-control" placeholder="Hora Inicio">
+        <input type="text" aria-label="Last name" class="form-control" placeholder="Hora Fin">
+      </form> -->
+      <div class="mb-3 row">
+        <div class="">
+            <div class="input-group">
+              <select id="inputState" class="form-select" name="dia" [(ngModel)]="dia">
+                <option value="" disabled selected>Día...</option>
+                <option>Lunes</option>
+                <option>Martes</option>
+                <option>Miercoles</option>
+                <option>Jueves</option>
+                <option>Viernes</option>
+              </select>
+              <input type="time" aria-label="First name" class="form-control" placeholder="Hora Inicio" name="hora_inicio" [(ngModel)]="hora_inicio">
+              <input type="time" aria-label="Last name" class="form-control" placeholder="Hora Fin" name="hora_fin" [(ngModel)]="hora_fin">
+                <button  type="button" class="btn btn-primary"
+                (click)="addHab()">
+                    Añadir
+                </button>
+            </div>
+        </div>
+      </div>
+      
+      <div class="mb-3 row">
+        <div class="col-sm-9">
+            <div *ngFor="let h of equipo.matriculas; let i = index"
+            class="input-group mb-2">
+                <input 
+                [(ngModel)]="h.dia" 
+                [name]="'habilidad_'+ i"
+                class="form-control"
+                disabled>
+                <input 
+                [ngModel]="h.hora_inicio"
+                class="form-control"
+                disabled
+                >
+                <input 
+                [ngModel]="h.hora_fin"
+                class="form-control"
+                disabled
+                >
+                <button (click)="eliminar(i)" type="button" class="btn btn-danger">
+                    Eliminar
+                </button>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-auto m-auto">
+      <button type="submit" *ngIf="!params" (click)="save()" class="btn btn-outline-light">Guardar Horarios</button>
+      <button type="submit" *ngIf="params" (click)="actualizar()" class="btn btn-outline-light">Actualizar Horarios</button>
+    </div>
+  </div>
+</div>
