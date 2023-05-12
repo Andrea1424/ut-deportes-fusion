@@ -86,6 +86,12 @@
   font-family: 'Poppins';
 }
 
+.text-fail{
+  color: #ea868f;
+}
+.text-great{
+  color: #75b798;
+}
 
 //Headline 1;
 .h1-Light {
@@ -361,6 +367,10 @@
 
   letter-spacing: 0.25px;
 }
+.noacc{
+  color: var(--black-25);
+}
+
 
 //BUTTON TEXTS
 .btn-status{
@@ -399,11 +409,11 @@
     border-radius: 0px;
     text-transform: uppercase;
     font-family: "Poppins";
-    font-size: 100%;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 500;
     line-height: 26px;
     border: solid 1px transparent;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.05em;
 }
 button[disabled] {
   background-color: var(--black-50);
@@ -430,18 +440,19 @@ button[disabled] {
   border: solid 1px var(--green-primary-student);
 }
 .btn-link{
-    font-weight: 800;
+    font-weight: 600;
 font-size: 12px;
 letter-spacing: 1px;
 line-height: 18px;
 text-decoration: none;
-font-style: italic;
+font-style: unset;
 text-align: center;
 text-transform: uppercase;
 color: var(--green-75-outline);
 }
 .btn-link:hover{
-  color: var(--green-primary-student);
+  color: var(--green-100);
+  font-weight: 700;
   text-underline-offset: 4px;
   text-decoration: underline var(--green-75-outline);
 }
@@ -472,25 +483,25 @@ a{
   font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 100%;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 //LABEL TEXT
 .label {
   font-family: "Poppins";
   font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 21px;
-  color: var(--white-light);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: rgb(173, 181, 189);
 }
 //TEXTTOS DE AYUDA FORMD
 .label-help {
   font-family: "Poppins";
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
+  font-size: .875em;
   line-height: 140%;
 }
 
@@ -499,16 +510,23 @@ ion-input[type=text],
 ion-input[type=password] */
 .input_student {
   width: 100%;
+  max-height: 37.6px;
   margin: 8px 0;
-  padding: 12px 20px;
+  padding: 0.375rem 0.75rem;
   box-sizing: border-box;
-  border: solid 1px var(--black-25);
-  background-color: transparent;
+  border: solid 1px #495057;
+  border-radius: 0.375rem;
+  background-color: #212529;
   outline: none;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgb(173, 181, 189);
 }
 
-.input-student[type=text]:focus{
-  color: var(--green-utvco);
+
+.input_student:active{
+  color: #fff;
 }
 
 
@@ -618,6 +636,7 @@ tbody{
   background-color: var(--black-color-student);
   color: var(--white-light);
 }
+
 /* ion-title {
     color: white;
 } */

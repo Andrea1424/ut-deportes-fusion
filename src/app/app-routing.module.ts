@@ -134,6 +134,10 @@ const routes: Routes = [
     path: 'lista-doc-instruc',
     loadChildren: () => import('./instructor/lista-doc-instruc/lista-doc-instruc.module').then( m => m.ListaDocInstrucPageModule)
   },
+  {
+    path: 'registro',
+    loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule)
+  },
 
 
 

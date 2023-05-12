@@ -1,0 +1,83 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>registro</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content >
+ <div class=" container-fluid py-4 h-100 w-100  ">
+  <div class="row">
+      <img src="../../../assets/img/fucho.jpeg" alt="">
+    <div class="col col-form mx-auto">
+      <!-- <form class="formulario" [formGroup]="miFormulario"> -->
+        <div class="card    m-auto text-bg-dark border-secondary   bg-opacity-75" >
+            <form class="formulario ">
+              <p class="h3 fw-bold text-center" >Se parte de las tutorías UTVCO</p>
+              <div class="mb-3">
+                <ion-label position="stacked " class="label">Ingresa tu Correo</ion-label>
+                <!-- <ion-input class="input_student" type="email" [pattern]="emailCheck" placeholder="***@***"
+                        formControlName="email"></ion-input> -->
+                <ion-input class="input_student" type="email" placeholder="***@***"></ion-input>
+                <!--   <span *ngIf="emailReq()" class="label-help text-danger">Dirección de correo no válida</span>
+                      <span *ngIf="emailPattern()" class="label-help text-danger">Patrón incorrecto</span> -->
+                <span class="label-help text-fail">Dirección de correo no válida</span>
+                <span class="label-help text-fail">Patrón incorrecto</span>
+              </div>
+              <div class="mb-3">
+                <ion-label class="label">Ingresa tu matricula</ion-label>
+                <!--   <ion-input class="input_student" type="text" placeholder="UT*****" formControlName="matricula"></ion-input> -->
+                <ion-input class="input_student" type="text" placeholder="UT*****"></ion-input>
+                <span class="label-help text-great">Todo bien, todo correcto</span>
+              </div>
+              <div class="mb-3">
+                <ion-label position="stacked " class="label">Selecciona tu Rol</ion-label>
+                <ion-select interface="popover" placeholder="Selecciona tu Rol" class="input_student" [multiple]="false">
+                  <ion-select-option>Instructor</ion-select-option>
+                  <ion-select-option>Administradoor</ion-select-option>
+                  <ion-select-option>Estudiante</ion-select-option>
+                </ion-select>
+              </div>
+              <div class="mb-2">
+                <ion-label position="stacked" class="label pb-2">Ingresa tu Contraseña</ion-label>
+                <!--  <ion-input type="password" class="input_student" placeholder="Ingrese su contraseña"
+                        formControlName="password"></ion-input> -->
+                <ion-input type="password" class="input_student" placeholder="Ingrese su contraseña"></ion-input>
+                <!-- <span class="form-text text-danger" *ngIf="campoValido('password')">Minimo 8 caracteres</span> -->
+                <span class="form-text text-fail">Minimo 8 caracteres</span>
+              </div>
+              <div class="button-login pt-2 m-auto text-center">
+                <!--   <button *ngIf="miFormulario.invalid" disabled class="btn btn-primario mb-2"> Iniciar Sesión
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <polyline points="13 17 18 12 13 7" />
+                        </svg></button>
+                      <button *ngIf="miFormulario.valid" type="sumbit" class="btn btn-primario my-2" (click)="save()">Iniciar
+                        Sesión
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3dec9d"
+                          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <polyline points="13 17 18 12 13 7" />
+                        </svg>
+                      </button> -->
+            
+                <button type="sumbit" class="btn btn-primario my-2">Registrarme
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="13 17 18 12 13 7" />
+                  </svg>
+                </button>
+              </div>
+              <div class="m-auto text-center pt-2">
+                <a [routerLink]="['/register']" class="btn-link">¿Olvidaste tu Contraseña?</a>
+              </div>
+              <!-- Link Registro -->
+              <div class="pt-2 m-auto text-center">
+                <span class="noacc ">¿Ya tienes una cuenta? </span> <a [routerLink]="['/login']" class="btn-link ">
+                  Inicia Sesión</a>
+              </div>
+            
+            </form>
+        </div>
+    </div>
+  </div>
+ </div>
+</ion-content>

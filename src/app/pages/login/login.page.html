@@ -13,8 +13,8 @@
   <div class="container overflow-hidden">
     <div class="row">
       <div class="col-sm-6">
-        <div class="p-3 text-center">
-          <img src="../../../assets/img/login.png" class="img-fluid" alt="iniciarSesion">
+        <div class="text-center m-auto">
+          <img src="../../../assets/img/login.png"  class="img-thumbnail bg-transparent border-0" alt="iniciarSesion">
         </div>
       </div>
       <div class="col-sm-6">
@@ -27,44 +27,48 @@
               <span *ngIf="emailPattern()" class="label-help text-danger">Patrón incorrecto</span>
             </div>
             <div>
+              <ion-label class="label">Ingresa tu matricula</ion-label>
+              <ion-input  class="input_student" type="text" placeholder="UT*****" formControlName="matricula"></ion-input>
+            </div>
+             <div class="mb-3">
+                <ion-label position="stacked " class="label">Selecciona tu Rol</ion-label>
+                <ion-select interface="popover" placeholder="Selecciona tu Rol" class="input_student" [multiple]="false">
+                  <ion-select-option>Instructor</ion-select-option>
+                  <ion-select-option>Administradoor</ion-select-option>
+                  <ion-select-option>Estudiante</ion-select-option>
+                </ion-select>
+              </div>
+            <div>
               <ion-label position="stacked" class="label pb-2">Ingresa tu Contraseña</ion-label>
               <ion-input type="password" class="input_student" placeholder="Ingrese su contraseña" formControlName="password"></ion-input>
               <span class="form-text text-danger" *ngIf="campoValido('password')">Minimo 8 caracteres</span>
             </div>
-            <div>
-              <ion-label class="label">Ingresa tu matricula</ion-label>
-              <ion-input  class="input_student" type="text" placeholder="UT*****" formControlName="matricula"></ion-input>
-            </div>
-            <div class="px-4">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                <label class="form-check-label" for="flexCheckChecked">
-                  Recordar mis Datos
-                </label>
-              </div>
-             <!--  <ion-item class=" pb-2">
-                <ion-checkbox slot="start"></ion-checkbox>
-                <label class="label">Recordar Datos</label>
-              </ion-item> -->
-            </div>
-          
-            <!--   <div>
-                <label class="label">Ingresa tu Usuario</label>
-                <input type="email" class="input email" placeholder="Ingrese su correo electronico" formControlName="email"
-                  [pattern]="emailCheck">
-                <span *ngIf="emailReq()" class="form-text text-danger">Dirección de correo no válida</span>
-                <span *ngIf="emailPattern()" class="form-text text-danger">Patrón incorrecto</span>
-              </div>
-              <div>
-                <label>Ingresa tu Contraseña</label>
-                <input type="password" class="input pass" placeholder="Ingrese su contraseña" formControlName="password">
-                <span class="form-text text-danger" *ngIf="campoValido('password')">Minimo 8 caracteres</span>
-              </div> -->
-            <!-- <a [routerLink]="['/recovery']" class="btn-link">Olvide mi contraseña</a> -->
-            <button *ngIf="miFormulario.invalid" disabled class="btn btn-primario mb-2"> Iniciar Sesión</button>
+           
+           <div class="button-login pt-2 m-auto">
+            <button *ngIf="miFormulario.invalid" disabled class="btn btn-primario mb-2"> Iniciar Sesión
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="13 17 18 12 13 7" />
+              </svg></button>
             <button *ngIf="miFormulario.valid" type="sumbit" class="btn btn-primario my-2" (click)="save()">Iniciar
-              Sesión</button>
-            <a [routerLink]="['/register']" class="btn-link mt-2">¿Olvidaste tu Contraseña?</a>
+              Sesión 
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3dec9d"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="13 17 18 12 13 7" />
+              </svg>
+            </button>
+           </div>
+            <div class="m-auto">
+              <a [routerLink]="['/register']" class="btn-link">¿Olvidaste tu Contraseña?</a>
+            </div>
+           <!-- Link Registro -->
+           <div class="pt-2 m-auto">
+                      <span class="noacc ">¿No tienes una cuenta? </span> <a [routerLink]="['/registro']" class="btn-link "> Registrate</a>
+           </div>
+         <div class="col-6">
+                    <div class="link-registro m-auto">
+                    </div>
+              </div>
           </form>
         </div>
       </div>

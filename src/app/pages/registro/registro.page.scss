@@ -1,0 +1,56 @@
+h1{
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.12;
+}
+img{
+    position: absolute;
+    inset: 0;
+    box-sizing: border-box;
+    padding: 0;
+    border: none;
+    display: block;
+    width: 0px;
+    height: 0px;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    object-position: left;
+    filter: opacity(.4);
+}
+.input_student{
+    min-width: 206px;
+    max-width: 755px;
+}
+.col-form{
+    margin: auto;
+    max-height: 100vh;
+}
+.card{
+    margin: 1rem;
+    border-radius: 0.375rem;
+    max-width: 874px;
+}
+.formulario{
+    position: relative;
+    padding: 1.5rem
+}
+@media (width <= 500px) { 
+    img{
+        filter: opacity(.3);
+    }
+    .formularioñ{
+        padding: 0px;
+        margin: 0;
+    }
+
+ }
+
+
+/* .col-form{
+    display: block;
+    object-fit: contain;
+    object-position: center center;
+} */

@@ -3,16 +3,15 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
+ /*  URL = 'http://127.0.0.1/tutorias/auth/'; */
+  URL = 'http://sseutvco.dyndns-server.com/tutorias/formlogin.php/';
 
-  URL = "http://127.0.0.1/tutorias/auth/";
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   login(login: any): Observable<Request> {
     return this.http.post<Request>(`${this.URL}login.php`, login);
   }
-
 }
